@@ -20,15 +20,15 @@ https://sudoku-rework.herokuapp.com/
 
 ##### Web
 
-![web1](./web1.png)
+![web1](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/mobile1.jpg)
 
-![web2](D:\Workplace\JS\suduku_rework\client\sources\web2.png)
+![web2](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/web2.png)
 
 ##### Mobile
 
-![mobile1](D:\Workplace\JS\suduku_rework\client\sources\mobile1.jpg)
+![mobile1](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/mobile1.jpg)
 
- ![mobile2](D:\Workplace\JS\suduku_rework\client\sources\mobile2.jpg)
+ ![mobile2](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/mobile2.jpg)
 
 ### Installation
 
