@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import Main from "./pages/Main";
+import Game from "./pages/Game";
+
+class App extends React.Component{
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      gaming: false,
+      difficulty: ""
+    }
+  }
+
+  // start or end game
+  changeGameStatus = () => {
+    this.setState({ gaming: !this.state.gaming });
+  }
+
+  // set difficulty for game
+  setDifficulty = (num) => {
+    this.setState({ difficulty: num });
+  }
+
+  render() {
+    return (
+        <div className="App">
+          {
+            this.state.gaming
+                ? <Game difficulty={ this.state.difficulty } changeGameStatus={ this.changeGameStatus }/>
+                : <Main difficulty={ this.state.difficulty } changeGameStatus={ this.changeGameStatus } setDifficulty={ this.setDifficulty }/>
+          }
+        </div>
+    );
+  }
 }
 
 export default App;

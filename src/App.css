@@ -1,38 +1,342 @@
-.App {
-  text-align: center;
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Klee+One&family=Source+Sans+Pro:wght@400&display=swap');
+/* global */
+*{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    color: aliceblue;
+
+    -webkit-user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+    background-attachment: fixed;
+    background: rgb(114,114,114);
+    background: linear-gradient(90deg, rgba(114,114,114,1) 0%, rgba(16,16,16,1) 100%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1{
+    font-family: 'Dancing Script', cursive;
 }
 
-.App-link {
-  color: #61dafb;
+svg{
+    height: 1.6em;
+    width: 1.6em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul{
+    list-style: none;
+}
+
+/* Animation */
+@keyframes blink {
+    0%{
+        opacity: 80%;
+    }
+    50%{
+        opacity: 20%;
+    }
+    100%{
+        opacity: 80%;
+    }
+}
+
+/* Main page */
+#mainPage{
+    position: relative;
+}
+
+#mainContent{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    text-align: center;
+}
+
+#mainContent.blur{
+    opacity: 0.8;
+}
+
+#mainContent h1{
+    margin: 0.1em 0.6em 0.6em;
+
+    font-size: 5.4em;
+}
+
+#startBtn{
+    padding: 0.8em 2em;
+
+    font-family: 'Klee One', cursive;
+    font-size: 1.8em;
+
+    margin: 1.8em;
+    border: #a4b0be solid 0.1em;
+
+    background-color: transparent;
+}
+
+#startBtn:hover{
+    border-color: aliceblue;
+
+    cursor: pointer;
+}
+
+#mainContent .bi{
+    position: absolute;
+
+    left: 2em;
+    bottom: 2.4em;
+
+    font-size: 1.6em;
+
+    fill: #dfe4ea;
+}
+
+#mainContent .bi:hover{
+    fill: aliceblue;
+
+    cursor: pointer;
+}
+
+#mainContent ul{
+    position: absolute;
+
+    right: 2em;
+    bottom: 2em;
+
+    text-align: left;
+    font-size: 1.6em;
+}
+
+.cornerBtn{
+    position: relative;
+
+    margin-top: 0.2em;
+
+    color: #a4b0be;
+}
+
+.cornerBtn .arrow{
+    display: inline-block;
+
+    margin-left: 0.8em;
+    margin-bottom: -0.4em;
+
+    font-size: 0.6em;
+
+    fill: #a4b0be;
+}
+
+.cornerBtn:hover{
+    color: aliceblue;
+
+    cursor: pointer;
+}
+
+.cornerBtn .arrow.on, .cornerBtn:hover .arrow{
+    fill: aliceblue;
+}
+
+/* Pop up */
+#modeGroup{
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#modeGroup li{
+    font-size: 0.6em;
+
+    color: #a4b0be;
+}
+
+#modeGroup li:hover{
+    color: aliceblue;
+
+    cursor: pointer;
+}
+
+#instructionGroup{
+    position: absolute;
+
+    top: 30%;
+    left: 50%;
+
+    width: 16em;
+
+    margin-left: -9.2em;
+    border-radius: 4px;
+    padding: 1.2em;
+
+    font-size: 1.8em;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    cursor: pointer;
+}
+
+#instructionGroup small{
+    font-size: 0.8em;
+
+    animation: blink 2s infinite ease-in-out;
+}
+
+/* Game page */
+#gamePage{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+}
+
+#gamePage h1{
+    font-size: 3.2em;
+
+    margin-bottom: 0.6em;
+}
+
+#gameBoard{
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25.92em;
+    height: 25.92em;
+}
+
+#gameBoard li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 2em;
+    height: 2em;
+
+    margin: 0.18em;
+
+    border: 0.02em solid transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    font-size: 1.2em;
+
+    cursor: pointer;
+}
+
+#gameBoard li.selected{
+    background-color: #70a1ff;
+}
+
+#gameBoard li.filled{
+    background-color: #7BED9F;
+}
+
+#gameBoard li.provided{
+    background-color: #EB4D4B;
+
+    cursor: default;
+}
+
+#gameBoard li.unassigned{
+    background-color: #ced6e0;
+}
+
+#gameBoard li.error{
+    border-color: #ff4757;
+    box-shadow: 0 0 0.04em 0.02em #ff4757;
+}
+
+#choices{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 1em;
+}
+
+.numChoice{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2em;
+    height: 2em;
+
+    margin: 0.32em;
+
+    border-radius: 50%;
+
+    color: white;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.numChoice:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+
+    cursor: pointer;
+}
+
+#timer, #backBtn{
+    position: absolute;
+
+    bottom: 1.6em;
+
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+}
+
+#timer{
+    left: 20%;
+}
+
+#backBtn{
+    right: 20%;
+}
+
+#backBtn:hover{
+    color: #a4b0be;
+    cursor: pointer;
+}
+
+
+/* for different screen sizes */
+@media screen and (max-width: 1200px) {
+    .App{
+        font-size: 0.9em;
+    }
+}
+
+/* for different screen sizes */
+@media screen and (max-width: 992px) {
+    .App{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .App{
+        font-size: 0.72em;
+    }
 }
