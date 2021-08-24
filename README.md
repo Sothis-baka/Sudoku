@@ -10,6 +10,8 @@ Sudoku game with react.js.
 
 ### Demo
 
+[bilibili](/)
+
 
 
 ### Installation
@@ -23,7 +25,3 @@ npm start
 ### Dependency
 
 React.js
-
-### 
-
-8说了，告辞
