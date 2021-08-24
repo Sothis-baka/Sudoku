@@ -20,15 +20,15 @@ https://sudoku-rework.herokuapp.com/
 
 ##### Web
 
-![2021-08-24 03_49_06-Alienware Command Center](C:\Users\17690\Desktop\2021-08-24 03_49_06-Alienware Command Center.png)
+![web1](./web1.png)
 
-![2021-08-24 03_49_23-](C:\Users\17690\Desktop\2021-08-24 03_49_23-.png)
+![web2](D:\Workplace\JS\suduku_rework\client\sources\web2.png)
 
 ##### Mobile
 
-![Screenshot_20210824_042022_com.android.chrome](C:\Users\17690\Desktop\Screenshot_20210824_042022_com.android.chrome.jpg)
+![mobile1](D:\Workplace\JS\suduku_rework\client\sources\mobile1.jpg)
 
-![Screenshot_20210824_042026_com.android.chrome](C:\Users\17690\Desktop\Screenshot_20210824_042026_com.android.chrome.jpg)
+ ![mobile2](D:\Workplace\JS\suduku_rework\client\sources\mobile2.jpg)
 
 ### Installation
 
