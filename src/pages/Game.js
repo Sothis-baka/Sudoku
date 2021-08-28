@@ -48,15 +48,17 @@ class Game extends React.Component{
         const filled = this.state.filled.slice(0);
         let { error, selected } = this.state;
 
+        // not yet started
         if(selected < 0){
             return;
         }
 
         const num = Number(e.target.value);
 
-        if(num === 0){
+        if(!num){
+            cur_matrix[selected] = 0;
+
             if(filled.includes(selected)){
-                cur_matrix[selected] = num;
                 filled.splice(filled.indexOf(selected), 1);
             }
         }else {
@@ -92,15 +94,13 @@ class Game extends React.Component{
 
                             if(index === Number(selected)){
                                 return <li className={"selected" + (error ? " error" : "")} id={ "cell" + index } value={ index }>{ num || "?" }</li>
-                            }
-                            if(filled.includes(index)){
-                                return <li className="filled" id={ "cell" + index } value={ index } onClick={ this.selectCell }>{ num }</li>
-                            }
-                            if(num === 0){
+                            }else if(!num){
                                 return <li className="unassigned" id={ "cell" + index } value={ index } onClick={ this.selectCell }>?</li>;
+                            } else if(filled.includes(index)){
+                                return <li className="filled" id={ "cell" + index } value={ index } onClick={ this.selectCell }>{ num }</li>
+                            }  else {
+                                return <li className="provided" id={ "cell" + index } value={ index }>{ num }</li>
                             }
-
-                            return <li className="provided" id={ "cell" + index } value={ index }>{ num }</li>
                         })
                     }
                 </ul>
@@ -109,7 +109,7 @@ class Game extends React.Component{
                     {
                         CANDIDATES.map(num => <li className='numChoice' id={ "choice" + num } value={ num } onClick={ this.assignNum }>{ num }</li>)
                     }
-                    <li className='numChoice' id={ "choice" + 0 } value={0} onClick={ this.assignNum }>?</li>
+                    <li className='numChoice' id={ "choice" + 0 } value={ 0 } onClick={ this.assignNum }>?</li>
                 </ul>
 
                 <div id='timer'>{ this.printTime() }</div>
