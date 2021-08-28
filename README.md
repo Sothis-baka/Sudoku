@@ -20,7 +20,7 @@ https://sudoku-rework.herokuapp.com/
 
 ##### Web
 
-![web1](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/mobile1.jpg)
+![web1](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/web1.png)
 
 ![web2](https://raw.githubusercontent.com/Sothis-baka/sudoku/master/sources/web2.png)
 
